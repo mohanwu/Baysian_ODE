@@ -1,18 +1,20 @@
-# Bayesian Folder Function Structure
+# Kalman Folder Function Structure
 This README provides the structure of the contents of this folder and a brief description of its usage.
 
-    Bayesian
-    ├── bayes_ode.py
-    |   └── bayes_ode           # Bayesian solver of ODE problem dx_t/dt = f(x_t, t).
-    ├── cov_exp.py
-    |   ├── cov_vv_ex           # Computes the covariance function for the derivative v_t using exponential kernel. 
-    │   ├── cov_xv_ex           # Computes the cross-covariance function for the solution process x_t and its derivative v_t using exponential kernel. 
-    │   └── cov_xx_ex           # Computes the covariance function for the solution process x_t using exponential kernel. 
-    ├── cov_rect.py
-    |   ├── cov_vv_ex           # Computes the covariance function for the derivative v_t using rectangular kernel. 
-    │   ├── cov_xv_ex           # Computes the cross-covariance function for the solution process x_t and its derivative v_t using rectangular kernel.
-    │   └── cov_xx_ex           # Computes the covariance function for the solution process x_t using rectangular kernel.
+    Kalman
+    ├── _mou_car.py
+    |   └── _mou_car                # Calculates parameters: Sigma_tilde, Q for the mOU CAR(p) process.
+    ├── cov_car.py
+    |   └── cov_car                 # Computes the covariance function for the CAR(p) process.
+    ├── higher_mvncond.py
+    |   └── higher_mvncond          # Computes the transition matrix and the variance matrix in Y_{n+1} ~ p(Y_{n+1} | Y_n).
+    ├── kalman_initial_draw.py
+    |   └── kalman_initial_draw     # Computes the initial draw X_0 for the kalman process given the initial value x_0.
     └── cov_square_exp.py
-        ├── cov_vv_ex           # Computes the covariance function for the derivative v_t using square exponential kernel.
-        ├── cov_xv_ex           # Computes the cross-covariance function for the solution process x_t and its derivative v_t using square exponential kernel.
-        └── cov_xx_ex           # Computes the covariance function for the solution process x_t using square exponential kernel.
+        ├── cov_vv_se           # Computes the covariance function for the derivative v_t 
+        |                           using square exponential kernel. 
+        ├── cov_xv_se           # Computes the cross-covariance function for the solution 
+        |                         process x_t and its derivative v_t using square exponential kernel. 
+        └── cov_xx_se           # Computes the covariance function for the solution process 
+                                  x_t using square exponential kernel. 
+                                  
